@@ -1,4 +1,5 @@
   let state = {
+    profilePage: {
       postData: [ 
       { id: 1, alert: "Hi,howau", like:12 },
       { id: 2, alert: "ItsMyFirstPrjct", like:76 },
@@ -6,8 +7,9 @@
       { id: 4, alert: 'WOF', like: 23},
       { id: 5, alert: 'lol', like: 43}
     ],
+  },
 
-    muiscPage: {
+    musicPage: {
       MusicData: [
       {id: 1, name: "Michael"},
       {id: 2, name: "props"},
@@ -16,7 +18,9 @@
       {id: 5, name:  "Ramil'"}
     ],
   },
-     dialogsData: [   
+    
+  dialogsPage: {
+    dialogsData: [   
       { id: 1, name: "Andrew", avatar: "https://en.facebookbrand.com/wp-content/uploads/2019/06/f_logo_RGB-Blue_512.png" },
       { id: 2, name: "Sasha" },
       { id: 3, name: "Dymich" },
@@ -31,6 +35,7 @@
       { id: 4, message: "Yo" },
       { id: 5, message: "lol" }
     ]
+  }
     
 
   }

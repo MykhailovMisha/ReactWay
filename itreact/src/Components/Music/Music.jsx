@@ -4,7 +4,8 @@ import MusicItem from './MusicItem/MusicItem';
 
 const Music = (props) => {
 
-    
+    debugger;
+
     let MusicElements = props.state.MusicData.map( music => 
         <MusicItem name={music.name}/> );
 

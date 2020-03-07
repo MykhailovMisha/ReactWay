@@ -6,14 +6,16 @@
       { id: 4, alert: 'WOF', like: 23},
       { id: 5, alert: 'lol', like: 43}
     ],
-     MusicData: [
+
+    muiscPage: {
+      MusicData: [
       {id: 1, name: "Michael"},
       {id: 2, name: "props"},
       {id: 3, name: "rRaCts"},
       {id: 4, name: 'lil peep'},
       {id: 5, name:  "Ramil'"}
     ],
-    
+  },
      dialogsData: [   
       { id: 1, name: "Andrew", avatar: "https://en.facebookbrand.com/wp-content/uploads/2019/06/f_logo_RGB-Blue_512.png" },
       { id: 2, name: "Sasha" },

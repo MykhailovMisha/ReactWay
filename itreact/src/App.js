@@ -31,8 +31,8 @@ const App = (props) => {
 
            <Route path='/news' render={() =>   <News/>  } />
 
-           <Route path='/Music' render={() => { 
-            return( <Music MusicData={props.state.MusicData}/> )} } />
+           <Route path='/Music' render={() => 
+             <Music state={props.state.musicPage}/> } />
 
            <Route path='/settings' render={ () => {return(<Settings/> )}} />
 

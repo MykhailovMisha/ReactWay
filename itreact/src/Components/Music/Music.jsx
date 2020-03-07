@@ -5,7 +5,7 @@ import MusicItem from './MusicItem/MusicItem';
 const Music = (props) => {
 
     
-    let MusicElements = props.MusicData.map( music => 
+    let MusicElements = props.state.MusicData.map( music => 
         <MusicItem name={music.name}/> );
 
     return(

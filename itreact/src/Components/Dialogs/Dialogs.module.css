@@ -1,0 +1,10 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+.dialog {
+  padding: 10px;
+}
+.dialogs_item .active a {
+  color: magenta;
+}

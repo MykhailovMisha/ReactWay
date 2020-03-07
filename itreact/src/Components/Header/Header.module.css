@@ -1,0 +1,20 @@
+.header {
+  grid-area: header;
+  background-color: #3b5998;
+}
+header img{
+  width: 50px;
+  padding: 5px 0 0 10px;
+}
+.header_items{
+  display: flex;
+  align-items: center;
+}
+.header_title{
+  font-size: 20px;
+  color: #fff;
+  padding: 5px 0 0 5px; 
+}
+.header_link{
+  text-decoration: none;
+}

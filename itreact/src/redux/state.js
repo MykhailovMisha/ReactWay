@@ -9,6 +9,7 @@ import { rerenderEntireTree } from "../render";
       { id: 4, alert: 'message', like: 23},
       { id: 5, alert: 'lol', like: 43}
     ],
+      newPostText: 'it-kam.com'
     },
 
     musicPage: {
@@ -45,6 +46,12 @@ import { rerenderEntireTree } from "../render";
         like: 0
     };
     state.profilePage.postData.push(newPost); 
+    rerenderEntireTree(state);
+  }   
+
+
+  export let updateNewText = (newText) => {
+    state.profilePage.newPostText = newText; 
     rerenderEntireTree(state);
   }
 

@@ -8,3 +8,16 @@
 .dialogs_item .active a {
   color: magenta;
 }
+.add_message{
+  width: 120px;
+  height: 35px;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 3px;
+  color: green;
+  cursor: pointer;
+}

@@ -3,19 +3,30 @@ import classes from "./myposts.module.css";
 import Post from "./Posts/post";
 
 const MyPosts = (props) => {
+  debugger;
   let postElements = props.postData.map( p => 
     <Post alert={p.alert} like={p.like}/>
 );
+    
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+  
+      let text = newPostElement.current.value;
+      props.addPost(text); 
+      newPostElement.current.value = '';
+    }
+
 
   return (
     
     <div className={classes.postsBlock}>
     <h3>  My posts </h3>
       <div>
-        <textarea> </textarea>
+        <textarea ref={newPostElement}> </textarea>
       </div>    
       <div>
-        <button>Add post</button>
+        <button onClick={addPost}>Add post</button>
         <button>Remove</button>
       </div>
       <div>New post</div>

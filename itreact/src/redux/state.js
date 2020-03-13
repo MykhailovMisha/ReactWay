@@ -9,7 +9,7 @@ import { rerenderEntireTree } from "../render";
       { id: 4, alert: 'message', like: 23},
       { id: 5, alert: 'lol', like: 43}
     ],
-      newPostText: 'it-kam.com'
+      newPostText: ''
     },
 
     musicPage: {
@@ -39,10 +39,10 @@ import { rerenderEntireTree } from "../render";
     ]
     }
   }
-   export let addPost = (postMessage) => {
+   export let addPost = () => {
     let newPost = {
         id: 5,
-        alert: postMessage,
+        alert: state.profilePage.newPostText,
         like: 0
     };
     state.profilePage.postData.push(newPost); 

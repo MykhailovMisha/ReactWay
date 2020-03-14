@@ -1,6 +1,8 @@
-import { rerenderEntireTree } from "../render";
+ let rerenderEntireTree = () => {
+   console.log('changed');
+ }
 
-  export let state = {
+ export let state = {
     profilePage: {
       postData: [ 
       { id: 1, alert: "Hi,howau", like:12 },
@@ -39,21 +41,24 @@ import { rerenderEntireTree } from "../render";
     ]
     }
   }
-   export let addPost = () => {
+   export const addPost = () => {
     let newPost = {
         id: 5,
         alert: state.profilePage.newPostText,
         like: 0
     };
-    state.profilePage.postData.push(newPost); 
+    state.profilePage.postData.push(newPost);
+    state.profilePage.newPostText = '' ;
     rerenderEntireTree(state);
   }   
 
-
-  export let updateNewText = (newText) => {
+  export const updateNewText = (newText) => {
     state.profilePage.newPostText = newText; 
     rerenderEntireTree(state);
   }
 
+  export const subscribe = (observer) => {
+     rerenderEntireTree = observer;
+  }
 
   export default state;

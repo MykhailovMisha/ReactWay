@@ -1,5 +1,5 @@
  let store = {
-     _state: {
+    _state: {
       profilePage: {
         postData: [ 
         { id: 1, alert: "Hi,howau", like:12 },
@@ -38,28 +38,32 @@
       ]
       }
     },
+    _rerenderEntireTree() {
+      console.log("state");
+   }, 
+
     getState() {
       return this._state;
     },
-    rerenderEntireTree() {
-       console.log("state");
-    }, 
-    addPost() {
-      let newPost = {
-        id: 5,
-        alert: this._state.profilePage.newPostText,
-        like: 0
-    };
-    this._state.profilePage.postData.push(newPost);
-    this._state.profilePage.newPostText = '' ;
-    this._rerenderEntireTree(this._state);
-    },
-    updateNewText(NewText) {
-      this._state.profilePage.newPostText = NewText; 
-      this._rerenderEntireTree(this._state);
-    },
     subscribe(observer) {
       this._rerenderEntireTree = observer;
+    },
+
+   
+    dispatch(action){
+      if (action.type === 'ADD-POST'){
+        let newPost = {
+          id: 5,
+          alert: this._state.profilePage.newPostText,
+          like: 0
+      };
+      this._state.profilePage.postData.push(newPost);
+      this._state.profilePage.newPostText = '' ;
+      this._rerenderEntireTree(this._state);
+      } else if (action.type === 'UPDATE-NEW-TEXT'){
+        this._state.profilePage.newPostText = action.NewText; 
+        this._rerenderEntireTree(this._state);
+      }
     }
  }
 

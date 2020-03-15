@@ -60,7 +60,8 @@
       this._state.profilePage.postData.push(newPost);
       this._state.profilePage.newPostText = '' ;
       this._rerenderEntireTree(this._state);
-      } else if (action.type === 'UPDATE-NEW-TEXT'){
+      } 
+      else if (action.type === 'UPDATE-NEW-TEXT'){
         this._state.profilePage.newPostText = action.NewText; 
         this._rerenderEntireTree(this._state);
       }

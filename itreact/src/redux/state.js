@@ -40,7 +40,8 @@ let store = {
         { id: 3, message: "Message three" },
         { id: 4, message: "Message four" },
         { id: 5, message: "Message five" }
-      ]
+      ],
+      newMessageBody: ""
     }
   },
   _rerenderEntireTree() {
@@ -66,6 +67,17 @@ let store = {
       this._rerenderEntireTree(this._state);
     } else if (action.type === "UPDATE-NEW-TEXT") {
       this._state.profilePage.newPostText = action.NewText;
+      this._rerenderEntireTree(this._state);
+    } else if (action.type === 'UPDATE-MSG'){
+      this._state.dialogsPage.newMessageBody = action.body;
+      this._rerenderEntireTree(this._state);
+    } else if (action.type === 'ADD-MSG'){
+      let newMsg = {
+        id: 6,
+        message: this._state.dialogsPage.newMessageBody, 
+      };
+      this._state.dialogsPage.messagesData.push(newMsg);
+      this._state.dialogsPage.newMessageBody = '';
       this._rerenderEntireTree(this._state);
     }
   }

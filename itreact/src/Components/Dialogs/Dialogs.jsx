@@ -25,7 +25,7 @@ let onMessageChange = () => {
 
 let addMessage = () => {
   props.dispatch(addMsgtActionCreator())
-  newMessageElement.current.value = ''
+  newMessageElement.current.value = '';
 }
 
   return (

@@ -1,3 +1,6 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+
 let store = {
   _state: {
     profilePage: {
@@ -56,31 +59,10 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === "ADD-POST") {
-      let newPost = {
-        id: 5,
-        alert: this._state.profilePage.newPostText,
-        like: 0
-      };
-      this._state.profilePage.postData.push(newPost);
-      this._state.profilePage.newPostText = "";
-      this._rerenderEntireTree(this._state);
-    } else if (action.type === "UPDATE-NEW-TEXT") {
-      this._state.profilePage.newPostText = action.NewText;
-      this._rerenderEntireTree(this._state);
-    } else if (action.type === 'UPDATE-MSG'){
-      this._state.dialogsPage.newMessageBody = action.body;
-      this._rerenderEntireTree(this._state);
-    } else if (action.type === 'ADD-MSG'){
-      let newMsg = {
-        id: 6,
-        message: this._state.dialogsPage.newMessageBody, 
-      };
-      this._state.dialogsPage.messagesData.push(newMsg);
-      this._state.dialogsPage.newMessageBody = '';
-      this._rerenderEntireTree(this._state);
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._rerenderEntireTree(this._state);
     }
-  }
 };
 
 window.store = store;

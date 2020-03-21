@@ -10,7 +10,6 @@ import News from "./Components/News/News";
 import {Route} from 'react-router-dom';
 
 
-
 const App = (props) => {
 
   return (
@@ -21,7 +20,7 @@ const App = (props) => {
          <div className="app_wrapper_content">
 
             <Route path='/dialogs' render={() => {
-              return( <Dialogs state={props.state.dialogsPage}
+              return( <Dialogs dialogsPage={props.state.dialogsPage}
                                dispatch={props.dispatch}
                               /> )} } />
 

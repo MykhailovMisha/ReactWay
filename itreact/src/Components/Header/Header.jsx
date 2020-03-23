@@ -8,10 +8,10 @@ const Header = () => {
           <NavLink className={classes.header_link} to="/profile">
         <div className={classes.header_items}>
         <img
-          src="https://en.facebookbrand.com/wp-content/uploads/2019/06/f_logo_RGB-Blue_512.png"
+          // src="https://en.facebookbrand.com/wp-content/uploads/2019/06/f_logo_RGB-Blue_512.png"
           alt="logo"
         />
-         <div className={classes.header_title}>facebook</div> 
+         <div className={classes.header_title}>name</div> 
         
         </div>
         </NavLink>

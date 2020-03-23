@@ -5,7 +5,7 @@ import Nav from "./Components/Navbar/Nav";
 import Profile from "./Components/Profile/Profile";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
-import News from "./Components/News/News";
+import NewsContainer from "./Components/News/NewsContainer";
 import {Route} from 'react-router-dom';
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
@@ -25,7 +25,8 @@ const App = (props) => {
            <Profile store={props.store}
                      /> } /> 
 
-           <Route path='/news' render={() =>   <News/>  } />
+           <Route path='/news' render={() =>
+            <NewsContainer store={props.store} /> } />
 
            <Route path='/Music' render={() => 
              <Music state={props.state.musicPage}/> } />

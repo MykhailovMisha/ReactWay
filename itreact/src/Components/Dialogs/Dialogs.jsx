@@ -1,4 +1,3 @@
-
 import React from "react";
 import classes from "./Dialogs.module.css";
 import DialogItem from './DialogItem/DialogItem';
@@ -25,7 +24,7 @@ let onMessageChange = () => {
   props.updateMessageText(body)
 }
 
-let addMessage = () => {
+let onAddMessage = () => {
   props.addMessage();
   newMessageElement.current.value = '';
 }
@@ -39,7 +38,7 @@ let addMessage = () => {
           {messagesElements}
           <textarea onChange={onMessageChange} ref={newMessageElement}
           value={props.newMessageBody} placeholder="Write"></textarea>
-          <div onClick={addMessage} className={classes.add_message}>Send message</div>
+          <div onClick={onAddMessage} className={classes.add_message}>Send message</div>
       </div>
     </div>
   );

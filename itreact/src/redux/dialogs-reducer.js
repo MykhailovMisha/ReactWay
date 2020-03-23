@@ -1,4 +1,3 @@
-
 const  ADD_MSG = 'ADD-MSG';
 const UPDATE_MSG = 'UPDATE-MSG';
 

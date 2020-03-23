@@ -3,27 +3,30 @@ import classes from  './News.module.css';
 import Newses from './Newses/Newses';
 
 const News = (props) => {
+let state = props.newsPage
 
-    let newsData = [
-        { title: "Kronavirus", subtitle: "infected 86k" },
-        { title: "Cancer", subtitle: "infected 286k" },
-        { title: "Grip", subtitle: "infected 486k" },
-        { title: "Kor", subtitle: "infected 586k" }
-    ]
+    let newsElements = state.newsData.map( n => 
+        <Newses title={n.title} subtitle={n.subtitle}/>
+    );
 
-    let newsElements = newsData.map( (news) => 
-        <Newses title={news.title} subtitle={news.subtitle}/>
-    )
+    let newNewsElement = React.createRef();
 
+    let onUpdateNews = () => {
+        let body = newNewsElement.current.value;
+        props.updateNews(body)
+    }
+    let onAddNews = () => {
+        props.addNews();
+        newNewsElement.current.value = '';
+    }
     return(
         <div>
             <h1 className={classes.title}>
                 News page
             </h1>
-            <Newses title='Kronavirus' subtitle= "now 86 000 infected"/>
-            <Newses title='Cancer' subtitle= "now 286 000 infected"/>
-            <Newses title='Grip' subtitle= "now 826 000 infected"/>
-            <Newses title='Kor' subtitle= "now 626 000 infected"/>
+            {newsElements}
+            <textarea onChange={onUpdateNews} ref={newNewsElement}></textarea>
+            <button onClick={onAddNews}></button>
         </div>
     )
 }

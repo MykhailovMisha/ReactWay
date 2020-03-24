@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import Nav from "./Components/Navbar/Nav";
 import Profile from "./Components/Profile/Profile";
-import Music from "./Components/Music/Music";
+// import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
 import NewsContainer from "./Components/News/NewsContainer";
 import {Route} from 'react-router-dom';
@@ -17,19 +17,17 @@ const App = (props) => {
         <Nav/>    
          <div className="app_wrapper_content">
 
-            <Route path='/dialogs' render={() => {
-              return( <DialogsContainer store={props.store} 
-                              /> )} } />
+            <Route path='/dialogs' render={() => 
+               <DialogsContainer />  } />
 
            <Route path='/profile' render={() => 
-           <Profile store={props.store}
-                     /> } /> 
+             <Profile  /> } /> 
 
            <Route path='/news' render={() =>
-            <NewsContainer store={props.store} /> } />
+             <NewsContainer  /> } />
 
-           <Route path='/Music' render={() => 
-             <Music state={props.state.musicPage}/> } />
+           {/* <Route path='/Music' render={() => 
+             <Music state={props.state.musicPage}/> } /> */}
 
            <Route path='/settings' render={ () => {return(<Settings/> )}} />
 
@@ -37,5 +35,6 @@ const App = (props) => {
     </div>
   );
 }
+
 
 export default App;

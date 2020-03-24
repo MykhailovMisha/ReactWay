@@ -6,7 +6,7 @@ const Newses = (props) => {
             <h2>
                 {props.title}
             </h2>
-            {/* <p> {props.subtitle} </p> */}
+            <p> {props.subtitle} </p>
         </div>
     )
 }

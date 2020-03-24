@@ -25,8 +25,8 @@ let state = props.newsPage
                 News page
             </h1>
             {newsElements}
-            <textarea onChange={onUpdateNews} ref={newNewsElement}></textarea>
-            <button onClick={onAddNews}></button>
+            <textarea onChange={onUpdateNews} ref={newNewsElement}></textarea> <br/>
+            <button onClick={onAddNews}>Add news</button>
         </div>
     )
 }

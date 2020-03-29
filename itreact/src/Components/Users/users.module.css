@@ -1,0 +1,27 @@
+.userPhoto {
+    width: 100px;
+    height: 100px;
+}
+.selectedPage {
+    font-weight: 700;
+}
+.change {
+    cursor: pointer;
+    margin: 10px;
+    font-size: 24px;
+    min-width: 300px;
+    min-height: 40px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #fff;
+    position: relative;
+    text-overflow: ellipsis;
+}
+.change::before {
+    content: '|';
+    position: absolute;
+    left: 10px;
+    top: 2px;
+}

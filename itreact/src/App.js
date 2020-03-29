@@ -8,6 +8,8 @@ import Settings from "./Components/Settings/Settings";
 import NewsContainer from "./Components/News/NewsContainer";
 import {Route} from 'react-router-dom';
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import UsersContainer from './Components/Users/UsersContainer';
+import ShopContainer from "./Components/Shop/shopContainer";
 
 
 const App = (props) => {
@@ -25,9 +27,13 @@ const App = (props) => {
 
            <Route path='/news' render={() =>
              <NewsContainer  /> } />
+            <Route path='/users'render={ () =>
+             <UsersContainer /> }/>
 
            {/* <Route path='/Music' render={() => 
              <Music state={props.state.musicPage}/> } /> */}
+            <Route path='/shop' render={ () => 
+             <ShopContainer /> } />
 
            <Route path='/settings' render={ () => {return(<Settings/> )}} />
 
